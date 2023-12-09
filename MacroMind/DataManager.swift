@@ -1,9 +1,5 @@
-//
 //  DataManager.swift
 //  MacroMind
-//
-//  Created by Danilo Lekovic on 2023-12-08.
-//
 
 import Foundation
 

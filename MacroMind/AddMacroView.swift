@@ -10,12 +10,15 @@ struct AddMacroView: View {
     @State private var carbs: String = ""
     @State private var fats: String = ""
     @State private var servingSize: String = ""
+    @State private var servingsEaten: String = ""
+    @Binding public var selectedDate: Date
 
     private func addFoodItem() {
         let foodItem = FoodItem(name: foodName, calories: Int(calories) ?? 0, protein: Int(protein) ?? 0, carbs: Int(carbs) ?? 0, fats: Int(fats) ?? 0)
         
         // Retrieve current intake or create a new one
-        var dailyIntake = DataManager.shared.loadDailyIntake(for: Date()) ?? DailyIntake(date: Date(), totalCalories: 0, totalProtein: 0, totalCarbs: 0, totalFats: 0, foodItems: [])
+        // ToDo: Pull up defaults for maxes
+        var dailyIntake = DataManager.shared.loadDailyIntake(for: selectedDate) ?? DailyIntake(date: selectedDate, totalCalories: 0, totalProtein: 0, totalCarbs: 0, totalFats: 0, foodItems: [], maxCalories: 2300, maxProtein: 210, maxCarbs: 120, maxFats: 60)
         
         // Update daily intake
         dailyIntake.foodItems.append(foodItem)
@@ -30,25 +33,45 @@ struct AddMacroView: View {
     
     var body: some View {
         NavigationView {
-            Form {
-                Section(header: Text("Food Details")) {
-                    TextField("Food Name", text: $foodName)
-                    TextField("Calories", text: $calories)
-                    TextField("Protein (g)", text: $protein)
-                    TextField("Carbs (g)", text: $carbs)
-                    TextField("Fats (g)", text: $fats)
-                    TextField("Serving Size", text: $servingSize)
+            VStack {
+                Form {
+                    Section(header: Text("Food Details")
+                        .foregroundColor(.black)) {
+                        TextField("Food Name", text: $foodName)
+                            .foregroundColor(.black)
+                        TextField("Calories", text: $calories)
+                            .foregroundColor(.black)
+                        TextField("Protein (g)", text: $protein)
+                            .foregroundColor(.black)
+                        TextField("Carbs (g)", text: $carbs)
+                            .foregroundColor(.black)
+                        TextField("Fats (g)", text: $fats)
+                            .foregroundColor(.black)
+                    }
+                    Section(header: Text("Serving Details")
+                        .foregroundColor(.black)) {
+                        TextField("Serving Size (g / mL)", text: $servingSize)
+                            .foregroundColor(.black)
+                        TextField("Servings Eaten (#)", text: $servingsEaten)
+                            .foregroundColor(.black)
+                    }
                 }
-                // Add a submit button or similar action
-                Button("Add", action: addFoodItem)
+                .navigationBarTitle("Add Macros", displayMode: .inline)
+                
+                Button("Save Macros", action: addFoodItem)
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(.blue)
+                .foregroundColor(.white)
+                .cornerRadius(5)
+                .padding()
             }
-            .navigationBarTitle("Add Macros", displayMode: .inline)
         }
     }
 }
 
 struct AddMacroView_Previews: PreviewProvider {
     static var previews: some View {
-        AddMacroView()
+        AddMacroView(selectedDate: .constant(Date()))
     }
 }

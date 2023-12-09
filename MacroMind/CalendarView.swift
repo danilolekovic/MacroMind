@@ -29,7 +29,7 @@ struct CalendarView: View {
 
         // Update goalTracking based on dailyIntake
         if let _ = dailyIntake {
-            goalTracking[date] = dailyIntake!.totalCalories <= 2000
+            goalTracking[date] = dailyIntake!.totalCalories <= dailyIntake!.maxCalories
         } else {
             goalTracking[date] = false
         }

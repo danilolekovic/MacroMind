@@ -1,9 +1,5 @@
-//
 //  DataModel.swift
 //  MacroMind
-//
-//  Created by Danilo Lekovic on 2023-12-08.
-//
 
 import Foundation
 
@@ -23,4 +19,22 @@ struct DailyIntake: Codable {
     var totalCarbs: Int
     var totalFats: Int
     var foodItems: [FoodItem]
+    var maxCalories: Int
+    var maxProtein: Int
+    var maxCarbs: Int
+    var maxFats: Int
+}
+
+struct UserPersonalization : Codable {
+    var age: Int
+    
+    // Weight is in pounds
+    var weight: Double
+    
+    // Height is in inches
+    var height: Double
+    
+    // calorieMax is the number of calories the user can have per day
+    // This should be stored in calendar entries
+    var calorieMax: Int
 }

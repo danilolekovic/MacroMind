@@ -18,7 +18,7 @@ struct ContentView: View {
                     isAddMacroSheetPresented = true
                 }
                 .sheet(isPresented: $isAddMacroSheetPresented) {
-                    AddMacroView()
+                    AddMacroView(selectedDate: $selectedDate)
                 }
                 .padding()
                 .foregroundColor(.white)
@@ -26,7 +26,7 @@ struct ContentView: View {
                 .cornerRadius(10)
                 Spacer()
             }
-            .navigationBarTitle("Dashboard", displayMode: .inline)
+            .navigationBarTitle("MacroMind", displayMode: .inline)
         }
     }
 }
