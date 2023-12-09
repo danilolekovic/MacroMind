@@ -1,21 +1,33 @@
-//
-//  ContentView.swift
-//  MacroMind
-//
-//  Created by Danilo Lekovic on 2023-12-07.
-//
+// ContentView.swift
+// MacroMind
 
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedDate = Date()
+    @State private var isAddMacroSheetPresented = false
+    @State private var goalTracking: [Date: Bool] = [:]
+    @State private var dailyIntake: DailyIntake?
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                CalendarView(selectedDate: $selectedDate, goalTracking: $goalTracking, dailyIntake: $dailyIntake)
+                DashboardView(isAddMacroSheetPresented: $isAddMacroSheetPresented, dailyIntake: $dailyIntake)
+                Button("Add Macros") {
+                    isAddMacroSheetPresented = true
+                }
+                .sheet(isPresented: $isAddMacroSheetPresented) {
+                    AddMacroView()
+                }
+                .padding()
+                .foregroundColor(.white)
+                .background(Color.blue)
+                .cornerRadius(10)
+                Spacer()
+            }
+            .navigationBarTitle("Dashboard", displayMode: .inline)
         }
-        .padding()
     }
 }
 

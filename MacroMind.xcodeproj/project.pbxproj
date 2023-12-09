@@ -14,6 +14,12 @@
 		8D912C8F2B22EA740022A5A1 /* MacroMindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D912C8E2B22EA740022A5A1 /* MacroMindTests.swift */; };
 		8D912C992B22EA740022A5A1 /* MacroMindUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D912C982B22EA740022A5A1 /* MacroMindUITests.swift */; };
 		8D912C9B2B22EA740022A5A1 /* MacroMindUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D912C9A2B22EA740022A5A1 /* MacroMindUITestsLaunchTests.swift */; };
+		8D912CA82B22EC4C0022A5A1 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D912CA72B22EC4C0022A5A1 /* CalendarView.swift */; };
+		8D912CAA2B22ECBA0022A5A1 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D912CA92B22ECBA0022A5A1 /* DashboardView.swift */; };
+		8D912CAC2B22ECD30022A5A1 /* ProgressBarWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D912CAB2B22ECD30022A5A1 /* ProgressBarWithLabel.swift */; };
+		8D912CAE2B22ED0B0022A5A1 /* AddMacroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D912CAD2B22ED0B0022A5A1 /* AddMacroView.swift */; };
+		8D912CB02B23FF9D0022A5A1 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D912CAF2B23FF9D0022A5A1 /* DataModel.swift */; };
+		8D912CB22B23FFB00022A5A1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D912CB12B23FFB00022A5A1 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,12 @@
 		8D912C942B22EA740022A5A1 /* MacroMindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacroMindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D912C982B22EA740022A5A1 /* MacroMindUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroMindUITests.swift; sourceTree = "<group>"; };
 		8D912C9A2B22EA740022A5A1 /* MacroMindUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroMindUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8D912CA72B22EC4C0022A5A1 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		8D912CA92B22ECBA0022A5A1 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		8D912CAB2B22ECD30022A5A1 /* ProgressBarWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarWithLabel.swift; sourceTree = "<group>"; };
+		8D912CAD2B22ED0B0022A5A1 /* AddMacroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMacroView.swift; sourceTree = "<group>"; };
+		8D912CAF2B23FF9D0022A5A1 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		8D912CB12B23FFB00022A5A1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +110,12 @@
 				8D912C7F2B22EA720022A5A1 /* ContentView.swift */,
 				8D912C812B22EA730022A5A1 /* Assets.xcassets */,
 				8D912C832B22EA730022A5A1 /* Preview Content */,
+				8D912CA72B22EC4C0022A5A1 /* CalendarView.swift */,
+				8D912CA92B22ECBA0022A5A1 /* DashboardView.swift */,
+				8D912CAB2B22ECD30022A5A1 /* ProgressBarWithLabel.swift */,
+				8D912CAD2B22ED0B0022A5A1 /* AddMacroView.swift */,
+				8D912CAF2B23FF9D0022A5A1 /* DataModel.swift */,
+				8D912CB12B23FFB00022A5A1 /* DataManager.swift */,
 			);
 			path = MacroMind;
 			sourceTree = "<group>";
@@ -257,8 +275,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D912CB02B23FF9D0022A5A1 /* DataModel.swift in Sources */,
+				8D912CB22B23FFB00022A5A1 /* DataManager.swift in Sources */,
 				8D912C802B22EA720022A5A1 /* ContentView.swift in Sources */,
+				8D912CAA2B22ECBA0022A5A1 /* DashboardView.swift in Sources */,
 				8D912C7E2B22EA720022A5A1 /* MacroMindApp.swift in Sources */,
+				8D912CA82B22EC4C0022A5A1 /* CalendarView.swift in Sources */,
+				8D912CAC2B22ECD30022A5A1 /* ProgressBarWithLabel.swift in Sources */,
+				8D912CAE2B22ED0B0022A5A1 /* AddMacroView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
